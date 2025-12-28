@@ -7,7 +7,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from openai import OpenAI
 
+
 app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"msg": "API viva y con ganas de bromear"}
+
 
 app.add_middleware(
     CORSMiddleware,
